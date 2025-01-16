@@ -11,3 +11,5 @@
   ```JavaScript
   npm i zustand
   ```
+* @tanstack/react-query library
+  It provides caching capability
