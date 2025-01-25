@@ -1,41 +1,11 @@
 import { useCreateProject } from "../hooks/api/mutations/useCreateProject";
-import { Button, Layout } from 'antd';
-
-const layoutStyle = {
-    borderRadius: 8,
-    overflow: 'hidden',
-    width: 'calc(50% - 8px)',
-    maxWidth: 'calc(50% - 8px)',
-};
-
-const headerStyle = {
-    textAlign: 'center',
-    color: '#fff',
-    height: 64,
-    paddingInline: 48,
-    lineHeight: '64px',
-    backgroundColor: '#4096ff',
-};
-
-const contentStyle = {
-    textAlign: 'center',
-    minHeight: 120,
-    lineHeight: '120px',
-    color: '#fff',
-    backgroundColor: '#0958d9',
-};
-
-const footerStyle = {
-    textAlign: 'center',
-    color: '#fff',
-    backgroundColor: '#4096ff',
-};
+import { Button, Row, Col, Flex } from 'antd';
 
 export const CreateProject = () => {
 
-    const { Header, Footer, Content } = Layout;
+    // const { Header, Footer, Content } = Layout;
 
-    const { createProjectMutation, isPending } = useCreateProject();
+    const { createProjectMutation } = useCreateProject();
 
     async function handleCreateProject() {
         console.log("Going to trigger the api");
@@ -48,17 +18,27 @@ export const CreateProject = () => {
     }
 
     return (
-        <Layout style={layoutStyle}>
-            <Header style={headerStyle}>
-                <h1>Create Project</h1>
-            </Header>
-            <Content style={contentStyle}>
-                <Button onClick={handleCreateProject}>Create Project</Button>
-                { isPending && <p>Creating project ...</p> }
-            </Content>
-            <Footer style={footerStyle}>
-                Footer
-            </Footer>            
-        </Layout>
+        // <Layout style={layoutStyle}>
+        //     <Header style={headerStyle}>
+        //         <h1>Create Project</h1>
+        //     </Header>
+        //     <Content style={contentStyle}>
+        //         <Button onClick={handleCreateProject}>Create Project</Button>
+        //         { isPending && <p>Creating project ...</p> }
+        //     </Content>
+        //     <Footer style={footerStyle}>
+        //         Footer
+        //     </Footer>            
+        // </Layout>
+        <Row>
+            <Col span={24}>
+            <Flex justify="center" align="center">
+                <Button 
+                    type="primary" 
+                    onClick={handleCreateProject}
+                >Create Playground</Button>
+            </Flex>
+            </Col>
+        </Row>
     );
 }
