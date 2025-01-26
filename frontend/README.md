@@ -27,3 +27,8 @@ createRoot(document.getElementById('root')).render(
     </QueryClientProvider>
 )
 ```
+
+## React Monaco Editor
+``` Bash
+npm i @monaco-editor/react
+```
