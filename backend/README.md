@@ -2,3 +2,8 @@
 ``` Bash
 npm install uuid4
 ```
+
+## Directory Tree
+``` Bash
+npm i directory-tree
+```
