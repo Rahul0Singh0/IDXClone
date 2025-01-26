@@ -32,3 +32,4 @@ createRoot(document.getElementById('root')).render(
 ``` Bash
 npm i @monaco-editor/react
 ```
+## zustand for State management
