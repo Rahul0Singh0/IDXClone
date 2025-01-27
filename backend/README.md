@@ -7,3 +7,14 @@ npm install uuid4
 ``` Bash
 npm i directory-tree
 ```
+
+## Websocket
+socket.io library
+``` bash
+npm install socket.io
+```
+
+## cokidar library
+``` bash
+npm i chokidar
+```

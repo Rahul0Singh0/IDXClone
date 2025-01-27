@@ -33,3 +33,8 @@ createRoot(document.getElementById('root')).render(
 npm i @monaco-editor/react
 ```
 ## zustand for State management
+
+## socket.io client
+``` Bash
+npm install socket.io-client
+```
