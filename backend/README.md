@@ -18,3 +18,14 @@ npm install socket.io
 ``` bash
 npm i chokidar
 ```
+
+## dockerrode
+``` bash
+npm i dockerode
+```
+
+## Steps to turn up docker container after creating project
+1. Setup the docker image
+```
+docker build -t sandbox .
+```

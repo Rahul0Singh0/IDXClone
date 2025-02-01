@@ -38,3 +38,8 @@ npm i @monaco-editor/react
 ``` Bash
 npm install socket.io-client
 ```
+
+## xterm for terminal
+``` Bash
+npm install @xterm/xterm
+```

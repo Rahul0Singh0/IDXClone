@@ -6,6 +6,7 @@ import { Server } from 'socket.io';
 import { createServer } from 'node:http';
 import chokidar from 'chokidar';
 import { handleEditorSocketEvents } from './socketHandlers/editorHandler.js';
+import { handleContainerCreate } from './containers/handleContainerCreate.js';
 
 const app = express();
 const server = createServer(app); // combined of express server and socket.io server
@@ -56,6 +57,24 @@ editorNamespace.on("connection", (socket) => {
 
     handleEditorSocketEvents(socket, editorNamespace);
 
+});
+
+const terminalNamespace = io.of('/terminal');
+
+terminalNamespace.on("connection", (socket) => {
+    let projectId = socket.handshake.query['projectId'];
+    console.log('terminal connected');
+
+    socket.on("shell-input", (data) => {
+        console.log("input received", data);
+        terminalNamespace.emit("shell-output", data);
+    });
+
+    socket.on("disconnect", () => {
+        console.log("terminal disconnected");
+    });
+
+    handleContainerCreate(projectId, socket);
 });
 
 server.listen(PORT, () => {
